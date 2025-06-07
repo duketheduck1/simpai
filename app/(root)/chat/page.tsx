@@ -60,7 +60,7 @@ const Page = () => {
       <div className="relative flex-1 h-screen overflow-y-auto p-3 space-y-4 rounded-md w-full ">
         {/* display user's prompt */}
         {msg.map((item, index) => (
-          <ViewContent key={index} item={item} index={0} />
+          <ViewContent key={index} item={item} />
         ))}
 
         {/* Scroll to the bottom */}
