@@ -130,43 +130,43 @@ export const getTexttoAudio = async ({ input, idClerk, author } : OpenAiProps): 
   return context;
 };
 
-const fileSaveWeb = (outputFolder: string, fileName: string) => {    
-    const webEnd= "http://localhost:3000/";
-    const folder = path.join(process.cwd(), "public", outputFolder);
-    const fileSavePath = path.join(folder, fileName);
-    const publicPath = `${webEnd+outputFolder}/${fileName}`;        
-    // Ensure the output folder exists
-    fs.mkdirSync(folder, { recursive: true });
-    return {"fileSavePath": fileSavePath, "publicPath": publicPath}
-}
+// const fileSaveWeb = (outputFolder: string, fileName: string) => {    
+//     const webEnd= "http://localhost:3000/";
+//     const folder = path.join(process.cwd(), "public", outputFolder);
+//     const fileSavePath = path.join(folder, fileName);
+//     const publicPath = `${webEnd+outputFolder}/${fileName}`;        
+//     // Ensure the output folder exists
+//     fs.mkdirSync(folder, { recursive: true });
+//     return {"fileSavePath": fileSavePath, "publicPath": publicPath}
+// }
 
-const downloadImage = (url: string, outputFolder: string, fileName: string): Promise<string> => {
-  return new Promise((resolve, reject) => {
+// const downloadImage = (url: string, outputFolder: string, fileName: string): Promise<string> => {
+//   return new Promise((resolve, reject) => {
     
-    const { fileSavePath, publicPath } = fileSaveWeb(outputFolder, fileName);
+//     const { fileSavePath, publicPath } = fileSaveWeb(outputFolder, fileName);
 
-    const file = fs.createWriteStream(fileSavePath);
-    https.get(url, (response) => {
-      if (response.statusCode !== 200) {
-        reject(new Error(`Failed to download image: ${response.statusCode}`));
-        return;
-      }
+//     const file = fs.createWriteStream(fileSavePath);
+//     https.get(url, (response) => {
+//       if (response.statusCode !== 200) {
+//         reject(new Error(`Failed to download image: ${response.statusCode}`));
+//         return;
+//       }
 
-      response.pipe(file);
+//       response.pipe(file);
 
-      file.on('finish', () => {
-        file.close();
-        console.log(`✅ Image saved to: ${publicPath}`);
-        resolve(publicPath);
-      });
+//       file.on('finish', () => {
+//         file.close();
+//         console.log(`✅ Image saved to: ${publicPath}`);
+//         resolve(publicPath);
+//       });
 
-      file.on('error', (err) => {
-        fs.unlinkSync(fileSavePath); // Remove incomplete file
-        reject(err);
-      });
-    }).on('error', (err) => {
-      reject(new Error(`Request failed: ${err.message}`));
-    });
-  });
-};
+//       file.on('error', (err) => {
+//         fs.unlinkSync(fileSavePath); // Remove incomplete file
+//         reject(err);
+//       });
+//     }).on('error', (err) => {
+//       reject(new Error(`Request failed: ${err.message}`));
+//     });
+//   });
+// };
 
