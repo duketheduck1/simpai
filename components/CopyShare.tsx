@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 
 interface CopyablePreProps {
   content: string;
@@ -10,8 +9,6 @@ interface CopyablePreProps {
 
 export const CopyablePre = ({ content, className = '' }: CopyablePreProps) => {
   const [copied, setCopied] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedContent, setEditedContent] = useState(content);
 
   const copyToClipboardFallback = (text: string) => {
     const textarea = document.createElement("textarea");
@@ -45,12 +42,7 @@ export const CopyablePre = ({ content, className = '' }: CopyablePreProps) => {
   
   };
 
-  const handleSave = () => {
-    content=editedContent;
-    onEdit?.(editedContent);
-    setIsEditing(false);
-  };
-
+  
   const shareToFacebook = () => {
     const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(content)}`;
     window.open(url, '_blank', 'width=600,height=400');
