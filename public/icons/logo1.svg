@@ -1,0 +1,22 @@
+<svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient S -->
+  <path d="M40 30 C60 10 80 20 80 40 C80 60 60 70 40 80 C20 90 20 70 40 60 C60 50 80 60 80 80" 
+        fill="url(#gradient)" 
+        stroke="#fff" 
+        stroke-width="2"/>
+  
+  <!-- Floating AI particles -->
+  <circle cx="50" cy="40" r="2" fill="#fff">
+    <animateMotion path="M0 0 Q10 -5 20 0" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="60" r="2" fill="#FF0000">
+    <animateMotion path="M0 0 Q-5 10 0 20" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFF00"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </linearGradient>
+  </defs>
+</svg>
