@@ -1,7 +1,7 @@
 import React from "react";
 import { CopyableImage, CopyablePre } from "./CopyShare";
 
-const ViewContent = ({item, index }:{item:messageAi,index:number}) => {
+const ViewContent = ({item}:{item:messageAi}) => {
   // Function to display the content of the message
   return (
     <>
@@ -21,7 +21,7 @@ const ViewContent = ({item, index }:{item:messageAi,index:number}) => {
 
 export default ViewContent;
 
-export const ViewImage = ({item, index }:{item:messageAi,index:number}) => {
+export const ViewImage = ({item }:{item:messageAi}) => {
   // Function to display the content of the message
   return (
     <>
@@ -39,7 +39,7 @@ export const ViewImage = ({item, index }:{item:messageAi,index:number}) => {
   );
 };
 
-export const ViewAudio = ({item, index }:{item:messageAi,index:number}) => {
+export const ViewAudio = ({item}:{item:messageAi}) => {
   // Function to display the content of the message
   return (
     <>
