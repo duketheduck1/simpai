@@ -1,10 +1,10 @@
 "use server";
 import { OpenAI } from "openai";
-import path from "path";
+// import path from "path";
 import { v4 as uuidv4 } from "uuid";
-import fs from "fs";
+// import fs from "fs";
 import { addContent } from "../../database/content";
-import https from "https";
+// import https from "https";
 import { uploadImageKit } from "./imagekitUpload";
 
 // const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
