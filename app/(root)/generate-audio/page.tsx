@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ViewAudio } from "@/components/ViewContent";
 import { getContent } from "@/database/content";
 import { getTexttoAudio } from "@/server/actions/openai";
-import { useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs"; 
 import React, { useState, useEffect, useRef } from "react";
 
 const Page = () => {
